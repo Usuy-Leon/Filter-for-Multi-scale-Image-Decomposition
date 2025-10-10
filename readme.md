@@ -22,14 +22,10 @@ I forked this repo initially ment for MATLAB to write it again in python, Julia 
 
 ## Python Implementation
 
+The SVF smooths an image while preserving edges by analyzing local variance. Regions with low variance are blurred, while regions with high variance (edges) are preserved.
 
-This module implements a local-statistical, edge-preserving image enhancement algorithm
-based on the Sub-Window Variance Filter (SVF). It decomposes an image into coarse (base),
-medium, and fine detail layers, then enhances those details using amplification factors.
+It decomposes an image into coarse (base), medium, and fine detail layers, then enhances those details using amplification factors.
 
-The SVF smooths an image while preserving edges by analyzing local variance.
-Regions with low variance are blurred, while regions with high variance (edges)
-are preserved.
 
 
 
