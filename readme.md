@@ -38,29 +38,26 @@ Defines the variance threshold to decide what is an "edge" versus a "flat area".
 
 ##  Workflow
 
-Start simple:
+### Start simple:
 Try the defaults: radius=3, epsilon=0.025, m_amp=2.0, f_amp=3.0.
 
-Adjust smoothness:
+### Adjust smoothness:
 Increase radius for more smoothing, decrease for sharper details.
 
-Tune edge sensitivity:
-If edges look too soft → decrease epsilon.
-If too harsh or noisy → increase epsilon.
+### Tune edge sensitivity:
+- If edges look too soft → decrease epsilon.
+- If too harsh or noisy → increase epsilon.
 
-Control enhancement strength:
+### Control enhancement strength:
 
-m_amp: affects edges and contrast.
+> m_amp: affects edges and contrast.
+>
+> f_amp: affects micro-textures.
+> Start from 1.0 (neutral) and raise gradually.
 
-f_amp: affects micro-textures.
-Start from 1.0 (neutral) and raise gradually.
+### Avoid artifacts:
 
-Avoid artifacts:
-
-Don’t set both amplifications too high (>4).
-
-Use np.clip(result, 0, 1) to avoid overflows.
-
+- Don’t set both amplifications too high (>4).
 
 
 
