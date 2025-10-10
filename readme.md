@@ -15,6 +15,7 @@ I forked this repo initially ment for MATLAB to write it again in python, Julia 
 :---: | :---: | :---:  
 *Input* | *Per-pixel preservation* (A) | *Filtered* (result)
 
+It decomposes an image into coarse (base), medium, and fine detail layers, then enhances those details using amplification factors.
 
 <img src="cat_Enhanced.png" alt="Input" width=256/> |
 :---: |
@@ -22,9 +23,44 @@ I forked this repo initially ment for MATLAB to write it again in python, Julia 
 
 ## Python Implementation
 
-The SVF smooths an image while preserving edges by analyzing local variance. Regions with low variance are blurred, while regions with high variance (edges) are preserved.
+1. Radius (r)
 
-It decomposes an image into coarse (base), medium, and fine detail layers, then enhances those details using amplification factors.
+Think of it like blur size or scale of smoothing.
+
+2. Epsilon (e)
+
+Defines the variance threshold to decide what is an "edge" versus a "flat area".
+
+| Parameter | Symbol    | Meaning                                               | Effect                                                                          |
+| --------- | --------- | ----------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `r`       | (radius)  | Size of the local analysis window (in pixels).        | Controls how much area around each pixel is considered for variance estimation. |
+| `e`       | (epsilon) | Threshold variance defining what counts as an “edge.” | Controls how strongly edges are preserved.                                      |
+
+##  Workflow
+
+Start simple:
+Try the defaults: radius=3, epsilon=0.025, m_amp=2.0, f_amp=3.0.
+
+Adjust smoothness:
+Increase radius for more smoothing, decrease for sharper details.
+
+Tune edge sensitivity:
+If edges look too soft → decrease epsilon.
+If too harsh or noisy → increase epsilon.
+
+Control enhancement strength:
+
+m_amp: affects edges and contrast.
+
+f_amp: affects micro-textures.
+Start from 1.0 (neutral) and raise gradually.
+
+Avoid artifacts:
+
+Don’t set both amplifications too high (>4).
+
+Use np.clip(result, 0, 1) to avoid overflows.
+
 
 
 
