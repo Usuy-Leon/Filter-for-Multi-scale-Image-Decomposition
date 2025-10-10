@@ -1,34 +1,35 @@
-## Sub-window Variance Filter
+# Multi Scale image Decomposition
 
-This is a reference MATLAB implementation of the _**Sub-window Variance filter**_ described in our article [_Multi-scale Image Decomposition Using a Local Statistical Edge Model_](https://ieeexplore.ieee.org/document/9483837).  Our filter uses **Summed Area Table** (integral image) as an acceleration means, and it is also gradient-preserving, i.e. has no gradient reversal problem. (paper preprint [here](https://arxiv.org/abs/2105.01951))
+I forker this repo initially ment for MATLAB to write it again in python, Julia and with luck even make it a ImageJ extension. Is a very interesting Digital Filter. In short, **It smooths an image while preserving strong edges.**
 
-This code has been tested on MATLAB R2019b.
+- If a region has low variance, it’s likely smooth (sky, wall, etc.), so it gets blurred more.
 
-By using `svf.m`, you may quickly filter an image with the following command and have the result displayed in MATLAB.
+- If a region has high variance (edges, textures), it’s likely important detail, so it’s preserved.
 
-    [A, result] = svf(double(imread('cat.png'))/255.0, 3, 0.025);
-    imshow(result);
+## Sub-window Variance Filter 
+
+ First descoription of this filter is in the article [_Multi-scale Image Decomposition Using a Local Statistical Edge Model_](https://arxiv.org/abs/2105.01951). 
+ For details go check the paper.
 
 <img src="cat.png" alt="Input" width=256/> | <img src="cat_A.png" alt="Input" width=256/> | <img src="cat_SVF.png" alt="Input" width=256/> 
 :---: | :---: | :---:  
 *Input* | *Per-pixel preservation* (A) | *Filtered* (result)
 
-Please see `svEnhance.m` for an example of how to enhance the image detail.
 
 <img src="cat_Enhanced.png" alt="Input" width=256/> |
 :---: |
 *Both medium and fine details enhanced* |
 
-If you have used this code in your research or work, please consider citing our paper:
+## Python Implementation
 
-    @INPROCEEDINGS{9483837,
-        author={Wong, Kin-Ming},
-        booktitle={2021 IEEE 7th International Conference on Virtual Reality (ICVR)},
-        title={Multi-scale Image Decomposition Using a Local Statistical Edge Model},
-        year={2021},
-        volume={},
-        number={},
-        pages={10-18},
-        doi={10.1109/ICVR51878.2021.9483837}
-    }
+
+This module implements a local-statistical, edge-preserving image enhancement algorithm
+based on the Sub-Window Variance Filter (SVF). It decomposes an image into coarse (base),
+medium, and fine detail layers, then enhances those details using amplification factors.
+
+The SVF smooths an image while preserving edges by analyzing local variance.
+Regions with low variance are blurred, while regions with high variance (edges)
+are preserved.
+
+
 
