@@ -60,5 +60,27 @@ Increase radius for more smoothing, decrease for sharper details.
 - Don’t set both amplifications too high (>4).
 
 
+## Julia Implementation
+Key differences and improvements in the Julia version:
 
+####Performance benefits:
+  - Julia's JIT compilation can make this code faster than the Python version
+  - Better memory management and vectorization
+
+
+
+To use this code:
+```julia
+
+using Pkg
+Pkg.add(["Images", "ImageFiltering", "FileIO", "ArgParse"])
+
+```
+### Run the script: 
+
+```bash
+
+julia svf_enhance.jl input_image.jpg --radius 3 --epsilon 0.025 --m_amp 2.0 --f_amp 3.0 --output enhanced.png
+```
+The Julia version maintains the same functionality while leveraging Julia's performance characteristics and type system. 
 
