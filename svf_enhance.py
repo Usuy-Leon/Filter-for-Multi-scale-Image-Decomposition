@@ -1,6 +1,4 @@
-"""
-svf_enhance.py
-  """
+
 
 import numpy as np
 import cv2
@@ -8,23 +6,7 @@ from scipy.ndimage import uniform_filter
 
 
 def svf(image: np.ndarray, radius: int, epsilon: float):
-    """
-    Parameters
-    ----------
-    image : np.ndarray
-        Input image (float32 or float64), normalized to [0, 1].
-    radius : int
-        Radius of the local window.
-    epsilon : float
-        Variance threshold. Higher values preserve stronger edges.
 
-    Returns
-    -------
-    base : np.ndarray
-        Smoothed image (edge-preserving).
-    variance_map : np.ndarray
-        Local variance map used for filtering.
-    """
     if image.ndim == 3:
         base = np.zeros_like(image)
         variance_map = np.zeros_like(image)
@@ -53,25 +35,7 @@ def svf_enhance(
     m_amp: float = 2.0,
     f_amp: float = 3.0
 ) -> np.ndarray:
-    """
-    Parameters
-    ----------
-    image_path : str
-        Path to the input image (e.g., "cat.png").
-    radius : int
-        Base filter radius for SVF.
-    epsilon : float
-        Variance threshold for edge preservation.
-    m_amp : float
-        Amplification factor for medium details.
-    f_amp : float
-        Amplification factor for fine details.
 
-    Returns
-    -------
-    result : np.ndarray
-        Enhanced image (float64, range [0, 1]).
-    """
     # Load and normalize
     img = cv2.imread(image_path, cv2.IMREAD_COLOR)
     if img is None:
