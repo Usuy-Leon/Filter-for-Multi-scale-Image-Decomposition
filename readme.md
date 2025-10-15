@@ -81,10 +81,9 @@ Increase radius for more smoothing, decrease for sharper details.
 ## Julia Implementation
 Key differences and improvements in the Julia version:
 
-####Performance benefits:
+#### Performance benefits:
   - Julia's JIT compilation can make this code faster than the Python version
   - Better memory management and vectorization
-
 
 
 To use this code:
