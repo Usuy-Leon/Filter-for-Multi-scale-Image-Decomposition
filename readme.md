@@ -56,24 +56,24 @@ Defines the variance threshold to decide what is an "edge" versus a "flat area".
 
 ##  Workflow
 
-### Start simple:
+#### Start simple:
 Try the defaults: radius=3, epsilon=0.025, m_amp=2.0, f_amp=3.0.
 
-### Adjust smoothness:
+#### Adjust smoothness:
 Increase radius for more smoothing, decrease for sharper details.
 
-### Tune edge sensitivity:
+#### Tune edge sensitivity:
 - If edges look too soft → decrease epsilon.
 - If too harsh or noisy → increase epsilon.
 
-### Control enhancement strength:
+#### Control enhancement strength:
 
 > m_amp: affects edges and contrast.
 >
 > f_amp: affects micro-textures.
 > Start from 1.0 (neutral) and raise gradually.
 
-### Avoid artifacts:
+#### Avoid artifacts:
 
 - Don’t set both amplifications too high (>4).
 
@@ -81,7 +81,7 @@ Increase radius for more smoothing, decrease for sharper details.
 ## Julia Implementation
 Key differences and improvements in the Julia version:
 
-#### Performance benefits:
+##### Performance benefits:
   - Julia's JIT compilation can make this code faster than the Python version
   - Better memory management and vectorization
 
@@ -93,7 +93,7 @@ using Pkg
 Pkg.add(["Images", "ImageFiltering", "FileIO", "ArgParse"])
 
 ```
-### Run the script using bash: 
+#### Run the script using bash: 
 
 ```bash
 
