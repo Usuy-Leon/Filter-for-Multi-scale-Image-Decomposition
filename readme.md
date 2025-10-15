@@ -16,14 +16,14 @@ I forked this repo initially ment for MATLAB to write it again in python, Julia 
 
 - If a region has high variance (edges, textures), it’s likely important detail, so it’s preserved.
 
-</div>
 
 ## Sub-window Variance Filter 
 
  First descoription of this filter is in the article [_Multi-scale Image Decomposition Using a Local Statistical Edge Model_](https://arxiv.org/abs/2105.01951). 
  For details go check the paper.
-
- <div align="center">
+ 
+</div>
+<div align="center">
 
 <img src="cat.png" alt="Input" width=256/> | <img src="cat_A.png" alt="Input" width=256/> | <img src="cat_SVF.png" alt="Input" width=256/> 
 :---: | :---: | :---:  
