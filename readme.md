@@ -93,7 +93,7 @@ using Pkg
 Pkg.add(["Images", "ImageFiltering", "FileIO", "ArgParse"])
 
 ```
-### Run the script: 
+### Run the script using bash: 
 
 ```bash
 
