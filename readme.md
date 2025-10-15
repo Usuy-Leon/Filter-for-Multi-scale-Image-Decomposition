@@ -1,15 +1,29 @@
+
+
+<div align="center">
+<div style="background-color: #1a1b1e; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+
 # Multi Scale image Decomposition
 
 I forked this repo initially ment for MATLAB to write it again in python, Julia and with luck even make it a ImageJ extension. Is a very interesting Digital Filter. In short, **It smooths an image while preserving strong edges.**
 
+
+</div>
+
+<div align="left">
+ 
 - If a region has low variance, it’s likely smooth (sky, wall, etc.), so it gets blurred more.
 
 - If a region has high variance (edges, textures), it’s likely important detail, so it’s preserved.
+
+</div>
 
 ## Sub-window Variance Filter 
 
  First descoription of this filter is in the article [_Multi-scale Image Decomposition Using a Local Statistical Edge Model_](https://arxiv.org/abs/2105.01951). 
  For details go check the paper.
+
+ <div align="center">
 
 <img src="cat.png" alt="Input" width=256/> | <img src="cat_A.png" alt="Input" width=256/> | <img src="cat_SVF.png" alt="Input" width=256/> 
 :---: | :---: | :---:  
@@ -21,6 +35,10 @@ It decomposes an image into coarse (base), medium, and fine detail layers, then 
 :---: |
 *Both medium and fine details enhanced* |
 
+</div>
+
+<div align="left">
+ 
 ## Python Implementation
 
 1. Radius (r)
@@ -84,3 +102,4 @@ julia svf_enhance.jl input_image.jpg --radius 3 --epsilon 0.025 --m_amp 2.0 --f_
 ```
 The Julia version maintains the same functionality while leveraging Julia's performance characteristics and type system. 
 
+</div>
