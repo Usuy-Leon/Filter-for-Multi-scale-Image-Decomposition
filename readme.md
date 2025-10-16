@@ -9,13 +9,13 @@ I forked this repo initially ment for MATLAB to write it again in python, Julia 
 
 
 </div>
-
 <div align="left">
  
 - If a region has low variance, it’s likely smooth (sky, wall, etc.), so it gets blurred more.
 
 - If a region has high variance (edges, textures), it’s likely important detail, so it’s preserved.
 
+<hr>
 
 ## Sub-window Variance Filter 
 
