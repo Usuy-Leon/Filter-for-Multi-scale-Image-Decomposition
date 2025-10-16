@@ -5,7 +5,7 @@
 
 # Multi=Scale image Decomposition
 
-I forked this repo initially ment for MATLAB to write it again in python, Julia and with luck even make it a ImageJ extension. Is a very interesting Digital Filter. In short, **It smooths an image while preserving strong edges.**
+I forked this repo initially meant for MATLAB to write it again in python, Julia and with luck even make it a ImageJ extension. Is a very interesting Digital Filter. In short, **It smooths an image while preserving strong edges.**
 
 
 </div>
